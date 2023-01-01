@@ -10,7 +10,7 @@ const FecthInbuiltAPI = () => {
   const fetchData = () => {
     setError("");
     setIsLoading(true);
-    fetch("https://fakestoreapi.com/products")
+    fetch("https://fakestoreapi.com/products/category/jewelery")
       .then(response => {
         if(response.ok){
           return response.json();
@@ -48,12 +48,11 @@ const FecthInbuiltAPI = () => {
         <div>
           {products.map((product) => (
             <div key={product.id} className="bg-purple-800 justify-center">
-            <h2 className="mx-auto"> {product.title} </h2>
-
-            <div className="flex">
-              <img src={product.image} alt={product.name} className=" w-1/3 border rounded-md"/>
-              <p>{product.description}</p>
-            </div>
+              <h2 className="mx-auto"> {product.title} </h2>
+              <div className="flex">
+                <img src={product.image} alt={product.name} className=" w-1/3 border rounded-md"/>
+                <p>{product.description}</p>
+              </div>
           </div>
           ))}
         </div>
